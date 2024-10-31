@@ -27,7 +27,7 @@ export default function StocksSection() {
   useEffect(() => {
     const loadStocks = async () => {
       try {
-        const data = await fetchStocks();
+        const data: any = await fetchStocks();
         setStocks(data);
       } catch (error) {
         console.error('Error loading stocks:', error);
