@@ -41,6 +41,7 @@ export async function fetchStocks() {
         }
 
         const data = await response.json();
+        console.log("data", data)
         const timeSeries = data['Time Series (5min)'];
         
         if (!timeSeries) {
@@ -95,7 +96,7 @@ export async function fetchSports() {
     }
 
     const data = await response.json();
-    
+
     return data.events.map((event: any) => ({
       id: event.id,
       homeTeam: event.competitions[0].competitors[0].team.abbreviation,
